@@ -3,6 +3,8 @@
 #
 # @see http://www.crummy.com/software/BeautifulSoup/documentation.html
 #
+# this script is for downloading JMA weather data from html.
+
 import os
 import urllib2
 import csv
@@ -63,18 +65,6 @@ if __name__ == "__main__":
                     windspeed = str2float(tds[11].string)
                 else:
                     windspeed = -9999
-                #dic['day']              = str(tds[0].find('a').string)   # 日付
-                #dic['precipitation']    = str2float(tds[1].string)       # 降水量
-                #dic['temperature.avg']  = str2float(tds[4].string)       # 気温 - 平均
-                #dic['temperature.high'] = str2float(tds[5].string)       # 気温 - 最高
-                #dic['temperature.low']  = str2float(tds[6].string)       # 気温 - 最低
-                #dic['sunshine duration']= str2float(tds[13].string)      # 日照時間
- 
-                #list.append(dic)
+     
                 row = (year,month,day,sunshineduration,temperaturelow,temperaturehigh,precipitation,windspeed)
                 writecsv.writerow(row)
-    # 最後に結果を表示する
-        #for dic in list:
-            #print dic
-            #monthcounter += 1
-        #yearcounter += 1
